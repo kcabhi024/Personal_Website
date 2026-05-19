@@ -22,7 +22,8 @@
       <li><a href="#portfolio"><i class="bx bx-image"></i>Portfolio</a></li>
       <li><a href="#contact"><i class="bx bx-mail-send"></i>Contact</a></li>
     </ul>
-    <div class="bx bx-menu" id="menu-icon"></div>
+    <div class="bx bx-menu" id="menu-icon" role="button" aria-label="Toggle navigation" aria-expanded="false"
+      tabindex="0"></div>
   </header>
 
   <!---------Home Section--------------->
@@ -34,16 +35,17 @@
           <span class="two">I'm</span>
         </div>
         <h1>Abhishek K C</h1>
-        <h3>Full-Stack  <span>  Developer.</span></h3>
+        <h3>Full-Stack <span> Developer.</span></h3>
         <p>
-          👋 Hi, I’m Abhishek KC — a Web Developer and Backend Enthusiast. 
-          I build basic to modern web applications using Spring Boot and PHP, 
+          👋 Hi, I’m Abhishek KC — a Web Developer and Backend Enthusiast.
+          I build basic to modern web applications using Spring Boot and PHP,
           focusing on clean backend logic, REST APIs, and smooth database integration.
-           I enjoy creating efficient, secure, and scalable solutions that connect 
-           frontend and backend seamlessly.
-           Let’s build something impactful.. </p>
+          I enjoy creating efficient, secure, and scalable solutions that connect
+          frontend and backend seamlessly.
+          Let’s build something impactful.. </p>
         <div class="button">
-          <a href="#" class="btn"><i class="bx bx-download"></i>Download MY CV</a>
+          <a href="Abhi_CV.pdf" class="btn" download aria-label="Download CV"><i class="bx bx-download"></i>Download MY
+            CV</a>
         </div>
       </div>
     </div>
@@ -80,38 +82,36 @@
     <div class="services-content">
       <div class="box">
         <div class="s-icons">
-          <i class="bx bx-mobile-alt"></i>
-        </div>
-        <h3>Web Design</h3>
-        <p>
-          I excel at web design, creating visually stunning and user-friendly
-          websites that make an impact towards my client also knowledge
-          regarding the development.
-        </p>
-        <a href="#" class="btn">Read More</a>
-      </div>
-
-      <div class="box">
-        <div class="s-icons">
           <i class="bx bx-code-alt"></i>
         </div>
-        <h3>Java Developer</h3>
+        <h3>Java Developer — Full Stack</h3>
         <p>
-          I excel at web design and creative design, crafting visually
-          stunning and innovative solutions that captivate and engage users.
+          End-to-end Java applications: REST APIs with Spring Boot, server-side
+          design, and polished frontend integration for complete product delivery.
         </p>
         <a href="#" class="btn">Read More</a>
       </div>
 
       <div class="box">
         <div class="s-icons">
-          <i class="bx bx-edit-alt"></i>
+          <i class="bx bx-brush"></i>
         </div>
-        <h3>Frontend Developer</h3>
+        <h3>Frontend Designer</h3>
         <p>
-          I’m skilled in frontend development, bringing websites to life with
-          responsive and intuitive designs that deliver a seamless user
-          experience.
+          Pixel-perfect UI/UX: modern responsive layouts, accessible components,
+          and interactive animations that boost conversions and usability.
+        </p>
+        <a href="#" class="btn">Read More</a>
+      </div>
+
+      <div class="box">
+        <div class="s-icons">
+          <i class="bx bx-server"></i>
+        </div>
+        <h3>Backend Developer</h3>
+        <p>
+          Robust backend systems with Spring ecosystem, database modeling,
+          security, and scalable architecture for production-ready services.
         </p>
         <a href="#" class="btn">Read More</a>
       </div>
@@ -125,56 +125,63 @@
     </div>
     <div class="portfolio-content">
       <div class="row">
-        <img src="img/project1.jpg" />
-        <div class="layer">
-          <h5>Java Developer</h5>
-          <p>i have 1 years experience as a java developer</p>
-          <a href="#"> <i class="bx bx-link-external"></i></a>
+        <div class="proj-card">
+          <h5>Parlor Management System</h5>
+          <p>Parlour booking and scheduling system built with HTML, CSS, JavaScript, PHP and MySQL. Features appointment
+            booking, slot management and admin scheduling tools.</p>
+          <div class="proj-tech">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span>
+          </div>
+          <a href="#" class="btn">View</a>
         </div>
       </div>
 
       <div class="row">
-        <img src="img/project2.jpg" />
-        <div class="layer">
-          <h5>Frontend development</h5>
-          <p>i have got a 1 years frontend experience.</p>
-          <a href="#"></a>
+        <div class="proj-card">
+          <h5>Pet Food Nepal</h5>
+          <p>Product platform built with Bootstrap for frontend and Spring Boot for backend services and APIs — catalog,
+            ordering and product management.</p>
+          <div class="proj-tech"><span>Bootstrap</span><span>Spring Boot</span><span>MySQl</span></div>
+          <a href="#" class="btn">View</a>
         </div>
       </div>
 
       <div class="row">
-        <img src="img/project3.jpg" />
-        <div class="layer">
-          <h5>Backend development</h5>
-          <p>I am engaging in a Backend development for last 1.5 years in spring-boot</p>
-          <a href="#"> <i class="bx bx-link-external"></i></a>
+        <div class="proj-card">
+          <h5>Lost & Found — FynDr</h5>
+          <p>Reporting platform for lost and found items built with Next.js frontend and PHP/MySQL backend for reporting
+            and matching items.</p>
+          <div class="proj-tech"><span>Next.js</span><span>PHP</span><span>MySQL</span></div>
+          <a href="#" class="btn">View</a>
         </div>
       </div>
 
       <div class="row">
-        <img src="img/project4.jpg" />
-        <div class="layer">
-          <h5>UI/UX Design</h5>
-          <p>I have an excellent knowledge in ui/ux design.</p>
-          <a href="#"> <i class="bx bx-link-external"></i></a>
+        <div class="proj-card">
+          <h5>Sajhabazar.com</h5>
+          <p>Worked as UI Designer and Project Manager on this e-commerce platform — responsible for visual design, user
+            flows, and coordinating development milestones.</p>
+          <div class="proj-tech"><span>UI Design</span><span>Project Management</span><span>eCommerce</span></div>
+          <a href="#" class="btn">View</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="proj-card">
+          <h5>Nuptse Technology — Asset Management</h5>
+          <p>Worked as a Full-Stack Intern on an Asset Management platform using Next.js for frontend and Spring Boot
+            for backend services, focusing on inventory tracking, user roles and REST APIs.</p>
+          <div class="proj-tech"><span>Next.js</span><span>Spring Boot</span><span>Full-Stack Intern</span></div>
+          <a href="#" class="btn">View</a>
         </div>
       </div>
 
       <div class="row">
-        <img src="img/project5.jpg" />
-        <div class="layer">
-          <h5>Photoshop</h5>
-          <p>huge knowledge regarding the Photoshop</p>
-          <a href="#"> <i class="bx bx-link-external"></i></a>
-        </div>
-      </div>
-
-      <div class="row">
-        <img src="img/project6.jpg" />
-        <div class="layer">
-          <h5>PHP</h5>
-          <p>i have an excellent knowledge regarding the PHP.</p>
-          <a href="#"> <i class="bx bx-link-external"></i></a>
+        <div class="proj-card">
+          <h5>Login &amp; Ecommerce Module</h5>
+          <p>Implemented authentication (login) and an e-commerce module using Spring Boot for APIs and React for the
+            frontend — include product listing, cart and checkout.</p>
+          <div class="proj-tech"><span>Spring Boot</span><span>React</span><span>Authentication</span></div>
+          <a href="#" class="btn">View</a>
         </div>
       </div>
     </div>
@@ -186,21 +193,48 @@
       <h2>Contact <span>Me!</span></h2>
       <h4>If you have any project in your mind.</h4>
       <p>
-        I'm a Java Developer - creating bold & brave interface design for
-        compaines all across the world.
+        Don't hesitate to contact me. I am open to discussing new projects, creative ideas, or opportunities to be part
+        of your visions. Let's connect and turn your ideas into reality!
       </p>
-      <div class="list">
-        <li><a href="tel:+9779766903648">+977 9766903648</a></li>
-        <li><a href="mailto:kcabhi024@gmail.com">kcabhi024@gmail.com</a></li>
-        <!-- <li><a href="#">Like Share & Subscribe</a></li> -->
+      <!-- white contact list box -->
+      <div class="contact-info-box">
+        <div class="contact-list-item" tabindex="0" data-fill="phone" data-value="+977 9766903648">
+          <i class="bx bx-phone-call"></i>
+          <div>
+            <strong>Phone</strong>
+            <div class="ci-value">+977 9766903648</div>
+          </div>
+        </div>
+
+        <div class="contact-list-item" tabindex="0" data-fill="email" data-value="kcabhi024@gmail.com">
+          <i class="bx bx-envelope"></i>
+          <div>
+            <strong>Email</strong>
+            <div class="ci-value">kcabhi024@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-list-item" tabindex="0" data-fill="location" data-value="Kathmandu, Nepal 44600">
+          <i class="bx bx-map"></i>
+          <div>
+            <strong>Location</strong>
+            <div class="ci-value">Kathmandu, Nepal 44600</div>
+          </div>
+        </div>
+        <!-- social links inside white box -->
+        <div class="contact-social" aria-label="Social links">
+          <a class="social-item" href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="bx bxl-github"></i></a>
+          <a class="social-item" href="https://www.facebook.com/kcabhi024" target="_blank" rel="noopener"
+            aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
+          <a class="social-item" href="https://www.twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i
+              class="bx bxl-twitter"></i></a>
+          <a class="social-item" href="https://www.instagram.com/kcabhi024/" target="_blank" rel="noopener"
+            aria-label="Instagram"><i class="bx bxl-instagram-alt"></i></a>
+          <a class="social-item" href="https://www.linkedin.com/in/abhi-kc-761824327/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+        </div>
       </div>
 
-      <div class="contact-icons">
-        <a href="https://www.facebook.com/kcabhi024"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.instagram.com/kcabhi024/"><i class="bx bxl-instagram-alt"></i></a>
-        <a href="https://www.linkedin.com/in/abhi-kc-761824327/"><i class="bx bxl-linkedin"></i></a>
-      </div>
     </div>
     <div class="contact-form">
       <form action="">
@@ -213,15 +247,16 @@
     </div>
   </section>
 
-  <!---------End Section---------->
-  <section class="end">
-    <div class="last-text">
-      <p>Copyright ©️ All rights are Preserved By-Abhi KC</p>
+  <!---------Footer---------->
+  <footer class="footer">
+    <div class="footer-left">
+      <p>©️ 2026 Abhishek K C — All rights reserved</p>
     </div>
-    <div class="top">
-      <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+
+    <div class="footer-right">
+      <a href="#home" class="top" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></a>
     </div>
-  </section>
+  </footer>
   <script src="script.js"></script>
 
 </body>

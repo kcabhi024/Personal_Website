@@ -3,7 +3,9 @@ const menuIcon = document.getElementById("menu-icon");
 const navList = document.querySelector(".navlist");
 
 menuIcon.addEventListener("click", () => {
-  navList.classList.toggle("open");
+  const isOpen = navList.classList.toggle("open");
+  // accessibility
+  menuIcon.setAttribute("aria-expanded", isOpen ? "true" : "false");
 });
 
 // Close menu when a link is clicked
@@ -93,32 +95,128 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Header background on scroll
+const header = document.querySelector("header");
+window.addEventListener("scroll", () => {
+  if (!header) return;
+  if (window.scrollY > 60) header.classList.add("scrolled");
+  else header.classList.remove("scrolled");
+});
+
 // Flow typing effect for name
 const typeWriter = () => {
   const nameElement = document.querySelector(".home-text h1");
   const fullName = "Abhishek K C";
+  if (!nameElement) return;
+
+  const typingSpeed = 160; // slower for smoothness
+  const deletingSpeed = 80;
+  const pauseAfterTyping = 1200;
+  const pauseAfterDeleting = 400;
+
   let index = 0;
+  let isDeleting = false;
 
-  // Clear the element
+  // ensure empty
   nameElement.textContent = "";
-  nameElement.style.opacity = "1";
 
-  const type = () => {
-    if (index < fullName.length) {
-      // Create span for each character for flow effect
-      const charSpan = document.createElement("span");
-      charSpan.textContent = fullName.charAt(index);
-      charSpan.classList.add("flow-char");
-      charSpan.style.animationDelay = `${index * 0.08}s`;
-      nameElement.appendChild(charSpan);
-      index++;
-      setTimeout(type, 100); // Typing speed
+  // ensure caret visible during type/delete
+  const setCaret = (on) => {
+    if (on) nameElement.classList.add("typing");
+    else nameElement.classList.remove("typing");
+  };
+
+  const loop = () => {
+    setCaret(true);
+    if (!isDeleting) {
+      // type forward
+      if (index < fullName.length) {
+        const charSpan = document.createElement("span");
+        charSpan.textContent = fullName.charAt(index);
+        charSpan.classList.add("flow-char");
+        charSpan.style.animationDelay = `${index * 0.06}s`;
+        nameElement.appendChild(charSpan);
+        index++;
+        setTimeout(loop, typingSpeed);
+      } else {
+        // finished typing
+        setCaret(false);
+        setTimeout(() => {
+          isDeleting = true;
+          setCaret(true);
+          setTimeout(loop, deletingSpeed);
+        }, pauseAfterTyping);
+      }
+    } else {
+      // deleting
+      if (nameElement.lastElementChild) {
+        nameElement.removeChild(nameElement.lastElementChild);
+        index = Math.max(0, index - 1);
+        setTimeout(loop, deletingSpeed);
+      } else {
+        // finished deleting, pause then type again
+        setCaret(false);
+        isDeleting = false;
+        setTimeout(loop, pauseAfterDeleting);
+      }
     }
   };
 
-  // Start typing after a short delay
-  setTimeout(type, 500);
+  // touch support: toggle gradient on touch
+  nameElement.addEventListener(
+    "touchstart",
+    () => {
+      nameElement.classList.add("touch");
+      clearTimeout(nameElement._touchTimeout);
+      nameElement._touchTimeout = setTimeout(
+        () => nameElement.classList.remove("touch"),
+        2000,
+      );
+    },
+    { passive: true },
+  );
+
+  // start after small delay
+  setTimeout(loop, 600);
 };
 
 // Initialize typing effect when page loads
 window.addEventListener("load", typeWriter);
+
+// Click contact-list-item to populate contact form fields
+document.addEventListener("DOMContentLoaded", () => {
+  const items = document.querySelectorAll(".contact-list-item");
+  const emailInput = document.querySelector(
+    '.contact-form input[type="email"]',
+  );
+  const phoneInput = document.querySelector(
+    '.contact-form input[type="number"]',
+  );
+
+  items.forEach((item) => {
+    item.addEventListener("click", () => {
+      const kind = item.getAttribute("data-fill");
+      const value = item.getAttribute("data-value");
+      if (kind === "email" && emailInput) {
+        emailInput.value = value;
+        emailInput.focus();
+      }
+      if (kind === "phone" && phoneInput) {
+        phoneInput.value = value.replace(/\s+/g, "");
+        phoneInput.focus();
+      }
+      // flash effect
+      item.style.transition = "transform 0.15s ease";
+      item.style.transform = "scale(0.995)";
+      setTimeout(() => (item.style.transform = ""), 160);
+    });
+
+    // keyboard activation (Enter / Space)
+    item.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        item.click();
+      }
+    });
+  });
+});
