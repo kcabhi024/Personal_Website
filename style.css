@@ -263,7 +263,7 @@ span {
     height: auto;
     width: 100%;
     padding: clamp(110px, 15vh, 150px) clamp(6%, 10vw, 10%) clamp(70px, 10vh, 110px);
-    background-image: url('/img/background.jpg');
+    background-image: url('/img/wall.jpg');
     background-size: cover;
     background-position: center;
     animation: fadeInUp 0.8s ease-out;
