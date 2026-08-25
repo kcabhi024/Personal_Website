@@ -189,9 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailInput = document.querySelector(
     '.contact-form input[type="email"]',
   );
-  const phoneInput = document.querySelector(
-    '.contact-form input[type="number"]',
-  );
+  const phoneInput = document.querySelector('.contact-form input[type="tel"]');
 
   items.forEach((item) => {
     item.addEventListener("click", () => {

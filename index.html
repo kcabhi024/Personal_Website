@@ -34,6 +34,7 @@
           <span class="one">Hello</span>
           <span class="two">I'm</span>
         </div>
+        <p class="hero-kicker"><span></span> Java &amp; Full-Stack Developer</p>
         <h1>Abhishek K C</h1>
         <h3>Full-Stack <span> Developer.</span></h3>
         <p>
@@ -46,7 +47,9 @@
         <div class="button">
           <a href="Abhi_CV.pdf" class="btn" download aria-label="Download CV"><i class="bx bx-download"></i>Download MY
             CV</a>
+          <a href="#portfolio" class="btn btn-ghost"><i class="bx bx-right-arrow-alt"></i>View My Work</a>
         </div>
+        <div class="hero-status"><span></span> Available for new opportunities</div>
       </div>
     </div>
   </section>
@@ -190,6 +193,7 @@
   <!------------------Contact section------------>
   <section class="contact" id="contact">
     <div class="contact-text">
+      <p class="contact-eyebrow">Let's work together</p>
       <h2>Contact <span>Me!</span></h2>
       <h4>If you have any project in your mind.</h4>
       <p>
@@ -198,7 +202,7 @@
       </p>
       <!-- white contact list box -->
       <div class="contact-info-box">
-        <div class="contact-list-item" tabindex="0" data-fill="phone" data-value="+977 9766903648">
+        <div class="contact-list-item" tabindex="0" data-fill="phone" data-value="+977 9744368590">
           <i class="bx bx-phone-call"></i>
           <div>
             <strong>Phone</strong>
@@ -237,12 +241,22 @@
 
     </div>
     <div class="contact-form">
+      <div class="form-heading">
+        <h3>Start a conversation</h3>
+        <p>Tell me a little about your idea and I will get back to you soon.</p>
+      </div>
       <form action="">
-        <input type="name" placeholder="Your Name " required />
-        <input type="email" placeholder="Your Email " required />
-        <input type="number" placeholder="your Mobile Number" required />
-        <textarea name="" id="" cols="35" rows="10" placeholder="How Can I Help You " required></textarea>
-        <input type="submit" value="Send Message" class="submit" required />
+        <label for="contact-name">Your name</label>
+        <input type="text" id="contact-name" name="name" placeholder="Abhishek K C" autocomplete="name" required />
+        <label for="contact-email">Email address</label>
+        <input type="email" id="contact-email" name="email" placeholder="you@example.com" autocomplete="email"
+          required />
+        <label for="contact-phone">Mobile number</label>
+        <input type="tel" id="contact-phone" name="phone" placeholder="+977 98XXXXXXXX" autocomplete="tel" />
+        <label for="contact-message">Project details</label>
+        <textarea name="message" id="contact-message" rows="6" placeholder="Tell me about your project..."
+          required></textarea>
+        <button type="submit" class="submit"><i class="bx bx-send"></i>Send Message</button>
       </form>
     </div>
   </section>
